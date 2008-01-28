@@ -22,6 +22,7 @@ Hardware random number generation tools.
 %make
 
 %install
+rm -rf $RPM_BUILD_ROOT
 mkdir -p %{buildroot}{%_sbindir,%_mandir/man{1,8},%_sysconfdir,%_initrddir}
 %makeinstall_std
 chmod -R a-s %{buildroot}
