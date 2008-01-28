@@ -14,8 +14,8 @@ Buildroot:      %_tmppath/%name-%version-root
 Hardware random number generation tools.
 
 %prep
-%setup -q -a 0 -n rng-tools-%version
-%patch1 -p0
+%setup -q -n rng-tools-%version
+%patch1 -p1
 
 %build
 %configure --sbindir=/sbin
