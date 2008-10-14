@@ -6,7 +6,7 @@ Group:          System/Kernel and hardware
 License:        GPL
 Source0:        rng-tools-%version.tar.bz2
 # 2.6.x's device name
-Patch1:         rng-tools-2-devname.patch.bz2
+Patch1:         rng-tools-2-devname.patch
 Buildroot:      %_tmppath/%name-%version-root
 
 
