@@ -22,13 +22,13 @@ Hardware random number generation tools.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 mkdir -p %{buildroot}{%_sbindir,%_mandir/man{1,8},%_sysconfdir,%_initrddir}
 %makeinstall_std
 chmod -R a-s %{buildroot}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
