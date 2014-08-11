@@ -1,19 +1,17 @@
 Summary:	Random number generator related utilities
 Name:		rng-utils
-Version:	2
-Release:	17
+Version:	5
+Release:	1
 Group:		System/Kernel and hardware
 License:	GPLv2
-Source0:	rng-tools-%{version}.tar.bz2
-# 2.6.x's device name
-Patch1:		rng-tools-2-devname.patch
+Source0:	http://downloads.sourceforge.net/project/gkernel/rng-tools/5/rng-tools-%{version}.tar.gz
 
 %description
 Hardware random number generation tools.
 
 %prep
 %setup -qn rng-tools-%{version}
-%patch1 -p1
+%apply_patches
 
 %build
 %configure --sbindir=/sbin
