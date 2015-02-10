@@ -14,6 +14,9 @@ Hardware random number generation tools.
 %apply_patches
 
 %build
+export CC=gcc
+export CXX=g++
+
 %configure --sbindir=/sbin
 %make
 
