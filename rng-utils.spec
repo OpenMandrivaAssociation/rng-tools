@@ -1,7 +1,7 @@
 Summary:	Random number generator related utilities
 Name:		rng-utils
 Version:	5
-Release:	2
+Release:	3
 Group:		System/Kernel and hardware
 License:	GPLv2
 Source0:	http://downloads.sourceforge.net/project/gkernel/rng-tools/5/rng-tools-%{version}.tar.gz
