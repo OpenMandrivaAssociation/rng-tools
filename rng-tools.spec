@@ -12,6 +12,7 @@ BuildRequires:	systemd-macros
 BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libssl)
 %rename rng-utils
 
 %description
