@@ -13,6 +13,7 @@ BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libssl)
+BuildRequires:	sysfsutils-devel
 %rename rng-utils
 
 %description
