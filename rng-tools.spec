@@ -23,6 +23,7 @@ Hardware random number generation tools.
 %build
 export CC=gcc
 export CXX=g++
+./autogen.sh
 
 %configure --sbindir=/sbin
 %make_build
