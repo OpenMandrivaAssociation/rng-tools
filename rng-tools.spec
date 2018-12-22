@@ -1,14 +1,13 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
 Version:	6.6
-Release:	1
+Release:	0.1
 Group:		System/Kernel and hardware
 License:	GPLv2
 Url:	https://github.com/nhorman/rng-tools
 Source0:	https://github.com/nhorman/rng-tools/archive/%{name}-%{version}.tar.gz
 Source1:	rngd.service
 BuildRequires:	pkgconfig(libsystemd)
-BuildRequires:	systemd-macros
 BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libxml-2.0)
@@ -20,7 +19,7 @@ BuildRequires:	sysfsutils-devel
 Hardware random number generation tools.
 
 %prep
-%autosetup -p1
+%setup -q
 
 %build
 export CC=gcc
@@ -28,10 +27,10 @@ export CXX=g++
 ./autogen.sh
 
 %configure --sbindir=/sbin
-%make_build
+%make
 
 %install
-%make_install
+%makeinstall_std
 
 # install systemd unit file
 install -Dt %{buildroot}%{_unitdir} -m0644 %{SOURCE1}
