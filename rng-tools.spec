@@ -14,7 +14,7 @@ BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libssl)
 BuildRequires:	sysfsutils-devel
-BuildRequires:	pkgconfig(p11-kit-1)
+BuildRequires:	pkgconfig(libp11)
 %rename rng-utils
 
 %description
