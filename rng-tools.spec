@@ -1,10 +1,10 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
 Version:	6.7
-Release:	1
+Release:	2
 Group:		System/Kernel and hardware
 License:	GPLv2
-Url:	https://github.com/nhorman/rng-tools
+Url:		https://github.com/nhorman/rng-tools
 Source0:	https://github.com/nhorman/rng-tools/archive/%{name}-%{version}.tar.gz
 Source1:	rngd.service
 Patch0:		https://src.fedoraproject.org/rpms/rng-tools/raw/master/f/rngd-shutdown.patch
