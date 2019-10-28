@@ -7,6 +7,7 @@ License:	GPLv2
 Url:	https://github.com/nhorman/rng-tools
 Source0:	https://github.com/nhorman/rng-tools/archive/%{name}-%{version}.tar.gz
 Source1:	rngd.service
+Patch0:		https://src.fedoraproject.org/rpms/rng-tools/raw/master/f/rngd-shutdown.patch
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	systemd-macros
 BuildRequires:	pkgconfig(libgcrypt)
@@ -24,11 +25,9 @@ Hardware random number generation tools.
 %autosetup -p1
 
 %build
-export CC=gcc
-export CXX=g++
 ./autogen.sh
 
-%configure --sbindir=/sbin
+%configure
 %make_build
 
 %install
@@ -46,7 +45,7 @@ chmod -R a-s %{buildroot}
 
 %files
 %{_bindir}/rngtest
-/sbin/rngd
+%{_sbindir}/rngd
 %{_presetdir}/86-rngd.preset
 %{_unitdir}/*.service
 %{_mandir}/man1/rngtest.1.*
