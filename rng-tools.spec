@@ -1,7 +1,7 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
-Version:	6.7
-Release:	2
+Version:	6.8
+Release:	1
 Group:		System/Kernel and hardware
 License:	GPLv2
 Url:		https://github.com/nhorman/rng-tools
