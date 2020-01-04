@@ -1,11 +1,11 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
-Version:	6.8
+Version:	6.9
 Release:	1
 Group:		System/Kernel and hardware
 License:	GPLv2
 Url:		https://github.com/nhorman/rng-tools
-Source0:	https://github.com/nhorman/rng-tools/archive/%{name}-%{version}.tar.gz
+Source0:	https://github.com/nhorman/rng-tools/archive/v%{version}.tar.gz
 Source1:	rngd.service
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	systemd-macros
