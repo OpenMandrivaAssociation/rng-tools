@@ -1,27 +1,28 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
-Version:	6.9
-Release:	2
+Version:	6.10
+Release:	1
 Group:		System/Kernel and hardware
 License:	GPLv2
 Url:		https://github.com/nhorman/rng-tools
 Source0:	https://github.com/nhorman/rng-tools/archive/v%{version}.tar.gz
 Source1:	rngd.service
-# (tpg) from fedora
-Patch0:		https://src.fedoraproject.org/rpms/rng-tools/raw/master/f/pkcs11-path.patch
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	systemd-macros
-BuildRequires:	pkgconfig(libgcrypt)
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libssl)
 BuildRequires:	sysfsutils-devel
 BuildRequires:	pkgconfig(libp11)
 BuildRequires:	jitterentropy-library-devel
+BuildRequires:	pkgconfig(jansson)
 %rename rng-utils
 
 %description
 Hardware random number generation tools.
+It monitors a set of entropy sources,
+and supplies entropy from them to the
+system kernel's /dev/random machinery.
 
 %prep
 %autosetup -p1
@@ -29,7 +30,7 @@ Hardware random number generation tools.
 %build
 ./autogen.sh
 
-%configure
+%configure --without-rtlsdr
 %make_build
 
 %install
