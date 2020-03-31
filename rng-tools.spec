@@ -28,7 +28,7 @@ system kernel's /dev/random machinery.
 %autosetup -p1
 
 %build
-./autogen.sh
+NOCONFIGURE=1 ./autogen.sh
 
 %configure --without-rtlsdr
 %make_build
