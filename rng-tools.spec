@@ -1,12 +1,11 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
-Version:	6.10
-Release:	3
+Version:	6.11
+Release:	1
 Group:		System/Kernel and hardware
 License:	GPLv2
 Url:		https://github.com/nhorman/rng-tools
-Source0:	https://github.com/nhorman/rng-tools/archive/v%{version}.tar.gz
-Source1:	rngd.service
+Source0:	https://github.com/nhorman/rng-tools/archive/%{name}-%{version}.tar.gz
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	systemd-macros
 BuildRequires:	pkgconfig(libcurl)
@@ -37,7 +36,7 @@ NOCONFIGURE=1 ./autogen.sh
 %make_install
 
 # install systemd unit file
-install -Dt %{buildroot}%{_unitdir} -m0644 %{SOURCE1}
+install -Dt %{buildroot}%{_unitdir} -m0644 rngd.service
 
 install -d %{buildroot}%{_presetdir}
 cat > %{buildroot}%{_presetdir}/86-rngd.preset << EOF
