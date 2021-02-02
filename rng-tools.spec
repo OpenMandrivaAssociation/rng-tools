@@ -1,7 +1,7 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
 Version:	6.11
-Release:	1
+Release:	2
 Group:		System/Kernel and hardware
 License:	GPLv2
 Url:		https://github.com/nhorman/rng-tools
@@ -44,6 +44,15 @@ enable rngd.service
 EOF
 
 chmod -R a-s %{buildroot}
+
+%post
+%systemd_post rngd.service
+
+%preun
+%systemd_preun rngd.service
+
+%postun
+%systemd_postun_with_restart rngd.service
 
 %files
 %{_bindir}/rngtest
