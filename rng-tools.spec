@@ -1,7 +1,7 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
-Version:	6.11
-Release:	2
+Version:	6.12
+Release:	1
 Group:		System/Kernel and hardware
 License:	GPLv2
 Url:		https://github.com/nhorman/rng-tools
@@ -11,7 +11,6 @@ BuildRequires:	systemd-macros
 BuildRequires:	pkgconfig(libcurl)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libssl)
-BuildRequires:	sysfsutils-devel
 BuildRequires:	pkgconfig(libp11)
 BuildRequires:	jitterentropy-library-devel
 BuildRequires:	pkgconfig(jansson)
