@@ -1,6 +1,6 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
-Version:	6.13
+Version:	6.14
 Release:	1
 Group:		System/Kernel and hardware
 License:	GPLv2
@@ -56,8 +56,9 @@ chmod -R a-s %{buildroot}
 
 %files
 %{_bindir}/rngtest
+%{_bindir}/randstat
 %{_sbindir}/rngd
 %{_presetdir}/86-rngd.preset
 %{_unitdir}/*.service
-%{_mandir}/man1/rngtest.1.*
-%{_mandir}/man8/rngd.8.*
+%doc %{_mandir}/man1/rngtest.1.*
+%doc %{_mandir}/man8/rngd.8.*
