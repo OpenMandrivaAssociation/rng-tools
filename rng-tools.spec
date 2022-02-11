@@ -1,6 +1,6 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
-Version:	6.14
+Version:	6.15
 Release:	1
 Group:		System/Kernel and hardware
 License:	GPLv2
