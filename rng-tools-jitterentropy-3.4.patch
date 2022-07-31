@@ -1,0 +1,12 @@
+diff -up rng-tools-6.15/Makefile.am.omv~ rng-tools-6.15/Makefile.am
+--- rng-tools-6.15/Makefile.am.omv~	2022-07-31 19:20:06.509739615 +0200
++++ rng-tools-6.15/Makefile.am	2022-07-31 19:20:18.891786664 +0200
+@@ -8,6 +8,8 @@ bin_PROGRAMS	 = rngtest
+ man_MANS	 = rngd.8 rngtest.1
+ noinst_LIBRARIES = librngd.a
+ 
++AM_CPPFLAGS = -DJENT_CONF_ENABLE_INTERNAL_TIMER
++
+ rngd_SOURCES	= rngd.h rngd.c	rngd_entsource.h rngd_entsource.c	\
+ 		  rngd_linux.h rngd_linux.c util.c ossl_helpers.c
+ 
