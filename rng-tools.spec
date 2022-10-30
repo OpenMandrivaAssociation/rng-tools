@@ -3,13 +3,14 @@
 Summary:	Random number generator related utilities
 Name:		rng-tools
 Version:	6.15
-Release:	5
+Release:	6
 Group:		System/Kernel and hardware
 License:	GPLv2
 Url:		https://github.com/nhorman/rng-tools
 Source0:	https://github.com/nhorman/rng-tools/archive/%{name}-%{version}.tar.gz
-Source1:	rngd.sysconfig
-Source2:	90-hwrng.rules
+Source1:	rngd.service
+Source2:	rngd.sysconfig
+Source3:	90-hwrng.rules
 Patch0:		rng-tools-jitterentropy-3.4.patch
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	systemd-rpm-macros
@@ -43,11 +44,11 @@ sed -i -e 's/$(libdarn_impl_a_CFLAGS) $(CFLAGS)/$(CFLAGS) $(libdarn_impl_a_CFLAG
 %install
 %make_install
 
-install -D -m 0644 %{SOURCE1} %{buildroot}%{_udevrulesdir}/90-hwrng.rules
-install -D -m 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/rngd
 
 # install systemd unit file
-install -Dt %{buildroot}%{_unitdir} -m0644 rngd.service
+install -Dt %{buildroot}%{_unitdir} -m0644 %{SOURCE1}
+install -D -m 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/sysconfig/rngd
+install -D -m 0644 %{SOURCE3} %{buildroot}%{_udevrulesdir}/90-hwrng.rules
 
 install -d %{buildroot}%{_presetdir}
 cat > %{buildroot}%{_presetdir}/86-rngd.preset << EOF
