@@ -11,6 +11,11 @@ Source0:	https://github.com/nhorman/rng-tools/archive/%{name}-%{version}.tar.gz
 Source2:	rngd.sysconfig
 Source3:	90-hwrng.rules
 Patch0:		rng-tools-jitterentropy-3.4.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(libsystemd)
 BuildRequires:	systemd-rpm-macros
 BuildRequires:	pkgconfig(libssl)
